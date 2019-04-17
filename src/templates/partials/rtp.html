@@ -1,0 +1,41 @@
+<div class="rtp-container">
+<div class="rtp-group">
+  <p>Want to save your progress? Click the button below and you will be returned to this section of the story when you come back to this page.</p>
+  <button class="rtp-button" id="rtp-setter">Save my progress</button>
+</div>
+
+<div class="rtp-group">
+  <p>Need a reminder? Just tell us when, and we’ll send you an email reminding you to finish this story.</p>
+  <form class="form-horizontal form-reminder">
+    <fieldset>
+      <div class="form-group">
+        <label for="email" class="form-label">Email address</label>
+        <input id="email" class="form-control" placeholder="email" required></input>
+      </div>
+      <div class="form-group">
+        <select id="rtp-when">
+          <option val="today">Today</option>
+          <option val="tomorrow">Tomorrow</option>
+          <option val="weekend">This weekend</option>
+        </select>
+
+        <select id="rtp-time">
+          <option val="morning">Morning</option>
+          <option val="lunch">Lunch</option>
+          <option val="evening">Evening</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="rtp-button" id="rtp-reminder">Remind me</button>
+      </div>
+    </fieldset>
+  </form>
+  <p class="status-update"></p>
+</div>
+</div>
+
+<div class="rtp-modal no-show">
+<p>Looks like you've been here before. Want us to take you back to where you left off?</p>
+<button class="rtp-approval rtp-button">Yes</button>
+<button class="rtp-declined rtp-button">No</button>
+</div>

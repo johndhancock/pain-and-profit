@@ -1,0 +1,109 @@
+.chart {
+  padding: 10px 15px;
+  background: white;
+
+  font-family: $sans;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+
+  .chart--two-pack {
+    @media(min-width: 450px) {
+      overflow: auto;
+      > * {
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+
+  h4 {
+    font-weight: bold;
+  }
+
+  text {
+    font-family: $sans;
+  }
+
+  .annotation {
+    font-weight: bold;
+    fill: $chartText;
+  }
+
+  .annotation-line,
+  .annotation-line-cap {
+    stroke: $chartText;
+    stroke-width: 2.5;
+  }
+  .annotation-line {
+    fill: none;
+    stroke-dasharray: 6px 3px;
+  }
+
+  .axis {
+    text {
+      font-size: 1.1rem;
+      fill: $chartText;
+    }
+    path,
+    line {
+      stroke: $chartGray;
+      shape-rendering: crispedges;
+    }
+  }
+  text.axis {
+    font-size: 1.1rem;
+    fill: $chartText;
+  }
+  line.axis {
+    stroke: $chartGray;
+    shape-rendering: crispedges;
+  }
+
+  .tick-lines {
+    line {
+      stroke: $chartGray;
+      stroke-dasharray: 3px 3px;
+    }
+  }
+
+  .chart__legend {
+    margin-top: 8px;
+    .chart__legend-item {
+      margin-right: 5px;
+      font-size: 1.1rem;
+      color: $chartCopy;
+      display: inline-block;
+
+      &.chart__legend-item-1 .fa {
+        color: $painPrimary;
+      }
+      &.chart__legend-item-2 .fa {
+        color: $black66;
+      }
+      &.chart__legend-item-3 .fa {
+        color: #D95B43;
+      }
+
+      &:last-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .bar {
+    shape-rendering: crispedges;
+  }
+}
+
+.chart,
+.walkthrough {
+  .credit,
+  .source {
+    font-size: 1.1rem;
+    color: $chartText;
+    margin-bottom: 0;
+  }
+  .credit {
+    text-align: right;
+  }
+}

@@ -1,0 +1,94 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+.bookmark {
+  color: $painPrimary;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  z-index: 10;
+  line-height: 52px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.rtp-container {
+  width: 95%;
+  max-width: 400px;
+  position: fixed;
+  right: 0;
+  z-index: 2000;
+  top: 50px;
+  background-color: $black33;
+  color: white;
+  padding: 10px 20px;
+  display: none;
+  font-family: $sans;
+  .rtp-group {
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    &:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+  input {
+    font-family: $sans;
+    margin-bottom: 1.2rem;
+    width: 280px;
+    font-size: 1.4rem;
+  }
+  select {
+    width: 140px;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+  }
+  .form-label {
+    display: block;
+    @include type(1.1rem, 1.5rem, .3rem);
+  }
+  p {
+    @include type(1.2rem, 1.8rem, 1.2rem);
+  }
+}
+
+.rtp-button {
+  background-color: initial;
+  border-radius: 0;
+  @include type(1.3rem, 1.8rem, 0);
+  border: none;
+  padding: 5px;
+  font-family: $sans;
+  border: 1px solid $painPrimary;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 180px;
+  color: white;
+  &:hover {
+    background-color: $painPrimary;
+    color: $black33;
+  }
+}
+
+.rtp-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 150px;
+  width: 250px;
+  margin: -74px 0 0 -125px;
+  background-color: rgba(0,0,0,.9);
+  color: white;
+  padding: 20px;
+  font-family: $sans;
+  button {
+    width: 50px;
+    margin-right: 10px;
+  }
+  p {
+    @include type(1.4rem, 1.8rem, 1.8rem);
+  }
+}

@@ -1,0 +1,64 @@
+#networks-graphic {
+  @media(max-width: 549px) {
+    #psychs-copy {
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      h4 {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        width: 100%;
+      }
+    }
+  }
+  @media(min-width: 550px) {
+    > div {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: stretch;
+
+      > div:first-child {
+        width: 35%;
+      }
+      > div:nth-child(2) {
+        width: 65%;
+        align-self: center;
+        padding-left: 40px;
+        padding-right: 35px;
+      }
+    }
+  }
+
+  #psychs-copy .psychs--step {
+    color: $chartText;
+    transition: color 1s;
+    display: none;
+
+    &.psychs--step-current {
+      color: $black33;
+      display: block;
+    }
+  }
+
+  .psychs--call-to-action {
+    position: relative;
+    font-weight: bold;
+    font-size: 1.7rem;
+    cursor: pointer;
+
+    .walkthrough__button {
+      display: inline;
+      top: -.65rem;
+      margin-left: 0.5rem;
+      left: auto;
+      right: auto;
+    }
+  }
+}
+
+// Allow combining of walkthrough walkthrough and wide-block classes
+// for a wide walthrough block
+.walkthrough.wide-block {
+  max-width: none;
+  width: auto;
+}

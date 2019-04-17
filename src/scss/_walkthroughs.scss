@@ -1,0 +1,169 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+/*
+-------------------------------------------
+WALKTHROUGHS
+-------------------------------------------
+*/
+
+.walkthrough {
+  background-color: white;
+  color: $black33;
+  font-weight: 100;
+  padding: 20px;
+  margin: 4.8rem 0;
+  width: 100%;
+  font-family: $sans;
+  border: 1px solid $painPrimary;
+  max-width: 650px;
+  @include transition(all, .15s, ease-out);
+  h4 {
+    font-weight: 100;
+    display: inline-block;
+    width: calc(100% - 70px);
+    letter-spacing: -.5px;
+  }
+  h6 {
+    font-weight: 700;
+  }
+  p,
+  text.chatter.p {
+    @include type(1.5rem, 2.1rem, 2.1rem);
+    &.strong {
+      font-weight: bold;
+    }
+  }
+  text.chatter.h3 {
+    @include type(3.6rem, 4.2rem, 4.2rem)
+  }
+  text.chatter.a {
+    cursor: pointer;
+  }
+  text.chatter.cta {
+    @include type(1.7rem, 2.1rem, 2.1rem)
+  }
+  a {
+    color: $dmnblue;
+    &:visited {
+      color: $dmnblue;
+    }
+  }
+}
+
+#walkthrough__appeals .walkthrough {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.walkthrough__container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.walkthrough .progress__container {
+  height: 2px;
+  width: 100%;
+  background-color: $black66;
+  position: relative;
+  margin-bottom: 2.4rem;
+}
+
+.walkthrough .progress__bar {
+  height: 2px;
+  background-color: $painPrimary;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  @include transition(width, .2s, ease-out);
+}
+
+.walkthrough__slides {
+  width: 100%;
+  position: relative;
+}
+
+.walkthrough__slide {
+  display: none;
+  padding: 0 0;
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+  &.slide--active {
+    display: block;
+  }
+}
+
+.walkthrough__content {
+  width: 100%;
+}
+
+.walkthrough__image  {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 1.2rem;
+  img {
+    width: 100%;
+  }
+}
+
+.walkthrough__button-container {
+  position: relative;
+  text-align: right;
+  margin-bottom: 1.2rem;
+  height: 30px;
+  float: right;
+  width: 65px;
+}
+
+.walkthrough__button {
+  position: absolute;
+  width: 30px !important;
+  height: 30px !important;
+  padding: 0;
+  top: 0;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 20;
+  cursor: pointer;
+  background-color: $painPrimary;
+  color: $black33;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 30px;
+  @include transition(opacity, .25s, ease-out);
+  text-align: center;
+}
+
+.walkthrough__previous {
+  right: 35px;
+}
+
+.walkthrough__next {
+  left: auto;
+  right: 0;
+}
+
+@media (max-width: 1150px) {
+  .walkthrough {
+    width: 60%;
+  }
+}
+
+@media (max-width: 900px) {
+  .walkthrough {
+    width: 100%;
+    margin: 4.8rem auto 4.8rem;
+  }
+
+  .walkthrough__content, .walkthrough__image {
+    width: 100%;
+    float: none;
+  }
+  .walkthrough__image {
+    margin-left: 0;
+  }
+}

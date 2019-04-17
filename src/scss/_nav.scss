@@ -1,0 +1,107 @@
+/*
+-------------------------------------------
+PROJECT NAV
+-------------------------------------------
+*/
+
+.pp__nav {
+  background-color: $black33;
+  padding: 0 10px 0 0;
+  height: 52px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  transform: translateY(-52px);
+  @include transition(transform, .25s, ease-out);
+  &.displayed {
+    transform: translateY(0px);
+  }
+  h5 {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    float: left;
+    line-height: 52px;
+    margin-bottom: 0;
+    padding: 0 20px;
+    @include textured-background;
+    color: $black33;
+    text-align: center;
+    a:hover {
+      text-decoration: none;
+    }
+    a, a:visited {
+      color: $black33;
+    }
+  }
+  h6 {
+    display: inline-block;
+    @include type(1.4rem, 52px, 0);
+    font-weight: 700;
+    position: relative;
+    color: white;
+    margin-left: 20px;
+    width: auto;
+    max-width: calc(100% - 270px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    &:after {
+      @include psuedoElement(100%, 1px, absolute);
+      background-color: $painPrimary;
+      bottom: calc(25px - .9rem);
+    }
+  }
+  ul {
+    position: absolute;
+    left: 171px;
+    color: white;
+    padding: 20px;
+    display: none;
+    background-color: $black33;
+    top: 100%;
+    &.displayed {
+      display: block;
+    }
+    li {
+      @include type(1.4rem, 1.8rem, 0);
+      font-weight: 700;
+      position: relative;
+      @include dividerBottom(1.2rem, 1.2rem, 1px solid $black66);
+      &:last-of-type {
+        @include dividerBottom(0, 0, none);
+      }
+      a {
+        color: white;
+        &:visited {
+          color: white;
+        }
+        &:hover {
+          color: $painPrimary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .pp__nav {
+    h6 {
+      .part-title {
+        display: none;
+      }
+    }
+    ul {
+      width: 100%;
+      left: 0;
+      li {
+        @include type(1.1rem, 1.5rem, 0);
+        @include dividerBottom(.6rem, .6rem, 1px solid $black66);
+      }
+    }
+  }
+}

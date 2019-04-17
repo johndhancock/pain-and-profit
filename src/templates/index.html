@@ -1,0 +1,326 @@
+{%extends 'home-base.html'%}
+{%import 'partials/img.html' as img%}
+
+
+{%block custom_meta%}
+<meta content="{{keywords|join(',')}}" name="keywords" />
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta content="{{shareText}}" name="description" />
+<title>{{pageTitle}}</title>
+<meta property="og:url" content="{{url}}" />
+<meta property="og:title" content="{{shareTitle}}"/>
+<meta property="og:description" content="{{shareText}}" name="description"/>
+<meta property="og:image" content="{{imgURL}}"/>
+<meta property="og:image:height" content="{{imgHeight}}"/>
+<meta property="og:image:width" content="{{imgWidth}}"/>
+<meta property="og:type" content="article" />
+<meta property="article:author" content="{{authorFBProfile}}" />
+<meta property="article:publisher" content="https://www.facebook.com/dallasmorningnews/" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{sectionTwitter}}" />
+<meta name="twitter:creator" content="@{{authorTwitter}}" />
+
+<meta name="liveFyreID" content="{{id}}" />
+
+<script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "{{shareTitle}}",
+        "url": "{{url}}",
+        "thumbnailUrl": "{{imgURL}}",
+        "dateCreated": "{{publishDate}}",
+        "articleSection": "{{section}}",
+        "creator": ["{{authors|join('","')|safe}}"],
+        "keywords": ["{{keywords|join('","')|safe}}"]
+      }
+</script>
+
+<meta property="og:keywords" content="{{keywords|join(',')}}"/>
+
+<meta name="news_keywords" content="{{keywords|join(',')}}"/>
+{%endblock%}
+
+
+{%block custom_head%}
+<link rel="canonical" href="{{url}}" />
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '588004431567496');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=588004431567496&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+{%endblock%}
+
+
+{%block ad%}
+ <script type="text/javascript" src="//www.googletagservices.com/tag/js/gpt.js"></script>
+<script type="text/javascript">
+DFP_networkId = "11222444";
+var DFPSlotSizes = window.isMobile ? [[320,50]] : [[728,90],[970,30]];
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+var pbjs = pbjs || {};
+pbjs.que = pbjs.que || [];
+pbjs.que.push(function() {
+  var pageAds = { //   adUnitID: "position"
+              dfpAdPositionTop: "Top",
+              dfpAdPositionMiddle: "Top2",
+              dfpAdPositionBottom: "Top2"
+  };
+
+  for(i in pageAds){
+      var bidSlot = new Object();
+      bidSlot.code = i;
+      bidSlot.sizes = DFPSlotSizes;
+      bidSlot.bids = window.isMobile ? window.mobileBids[pageAds[i]] : window.desktopBids[pageAds[i]];
+      if(typeof bidSlot.bids != "undefined"){
+          if(typeof pbjs.addAdUnits != "undefined"){
+              pbjs.addAdUnits(bidSlot);
+          }
+          window.bidSlots[i] = bidSlot;
+      }
+  }
+});
+googletag.cmd.push(function () {
+  var DFP_sitepage = "DMN/interactives";
+  var dfpSizeMapping = googletag.sizeMapping().
+         addSize([992, 480], [[728,90],[970,30]]).
+         addSize([0, 0], [[320,50]]).
+         build();
+
+
+  /* var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionTop")
+                  .defineSizeMapping(dfpSizeMapping)
+                  .setTargeting("position", "Top")
+                  .addService(googletag.pubads());
+
+
+  var adSlot1 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionMiddle")
+                  .defineSizeMapping(dfpSizeMapping)
+                  .setTargeting("position", "Top2")
+                  .addService(googletag.pubads());
+
+
+
+  var adSlot2 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionBottom")
+                  .defineSizeMapping(dfpSizeMapping)
+                  .setTargeting("position", "Top2")
+                  .addService(googletag.pubads());
+
+*/
+   googletag.pubads().enableAsyncRendering();
+   googletag.pubads().enableSingleRequest();
+   googletag.enableServices();
+
+});
+</script>
+{%endblock%}
+
+
+{%block content%}
+
+<section id="intro">
+    <div id="intro__content">
+      <div class="intro__slide">
+        <img src="images/_logo.svg" alt="Pain and Profit logo" />
+        <h2>Pain<span class="white">&</span>Profit</h2>
+        <h4>Your tax money may not help poor, sick Texans get well, but it definitely helps health care companies get rich</h4>
+      </div>
+    </div>
+
+
+    <nav id="intro__nav">
+      <span id="intro__skip">Skip intro</span>
+    </nav>
+  </section>
+
+  <section id="home-content" class="no-show">
+
+  <div class="pp__storyblock">
+    <div class="pp__image" id="part1-block"></div>
+    <div class="pp__blockcontainer">
+      <div class="pp__blockcontent">
+        <h6>Pain<span class="white">&</span>Profit: Part 1</h6>
+        <h4>The preventable tragedy of D’ashon Morris</h4>
+        <p>Doctors described him as “happy and playful” and told his foster mother he would be healthy by the time he went to kindergarten. That was before a giant health care company made a decision that saved it as much as $500 a day — and cost D’ashon everything.</p>
+        <a href="part1.html">Read</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pp__storyblock">
+    <div class="pp__image" id="part2-block"></div>
+    <div class="pp__blockcontainer">
+      <div class="pp__blockcontent">
+        <h6>Pain<span class="white">&</span>Profit: Part 2</h6>
+        <h4>As patients suffer, companies profit</h4>
+        <p>Imagine being trapped in a bed for more than a year because you can't get the medical equipment you need. Years of poor oversight by the state have allowed health care companies to skimp on essential care for sick kids and disabled adults.</p>
+        <a href="part2.html">Read</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pp__storyblock">
+    <div class="pp__image" id="part3-block"></div>
+    <div class="pp__blockcontainer">
+      <div class="pp__blockcontent">
+        <h6>Pain<span class="white">&</span>Profit: Part 3</h6>
+        <h4>Texas pays companies billions for ‘sham networks’ of doctors</h4>
+        <p>The state tells foster parents that hundreds of psychiatrists will see their kids. We found only 34. Managed-care companies overstate the number of physicians available to treat the state’s sickest patients.</p>
+        <a href="part3.html">Read</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pp__storyblock">
+    <div class="pp__image" id="part4-block"></div>
+    <div class="pp__blockcontainer">
+      <div class="pp__blockcontent">
+        <h6>Pain<span class="white">&</span>Profit: Part 4</h6>
+        <h4>‘Glossover of the horror’</h4>
+        <p>A whistleblower says taxpayers are not getting their money’s worth and sick people are not getting the care they need. Texas fails to act when health care companies put patients in peril.</p>
+        <a href="part4.html">Read</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pp__storyblock">
+    <div class="pp__image" id="part5-block"></div>
+    <div class="pp__blockcontainer">
+      <div class="pp__blockcontent">
+        <h6>Pain<span class="white">&</span>Profit: Part 5</h6>
+        <h4>Parents vs. the Austin machine</h4>
+        <p>“You can tell that he’s crying or screaming, but nothing comes out.” Texas families take fight for medically fragile children to the Legislature.</p>
+        <a href="part5.html">Read</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pp__storyblock">
+    <div class="pp__image" id="part6-block"></div>
+    <div class="pp__blockcontainer">
+      <div class="pp__blockcontent">
+        <h6>Pain<span class="white">&</span>Profit: Part 6</h6>
+        <h4>‘Recipe for disaster’</h4>
+        <p>A company’s refusals to cover medical costs, from inexpensive diapers to costly treatments, have made some foster parents’ jobs nearly impossible.</p>
+        <a href="part6.html">Read</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pp__storyblock">
+    <div class="pp__image" id="part7-block"></div>
+    <div class="pp__blockcontainer">
+      <div class="pp__blockcontent">
+        <h6>Pain<span class="white">&</span>Profit: Part 7</h6>
+        <h4>Stacked against them</h4>
+        <p>Texas advertises a ‘fair’ system for patients to fight back when companies deny them prescribed medical care. But the sickest Texans get stuck in an endless cycle of appeals.</p>
+        <a href="part7.html">Read</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pp__storyblock">
+    <div class="pp__image" id="part8-block"></div>
+    <div class="pp__blockcontainer">
+      <div class="pp__blockcontent">
+        <h6>Pain<span class="white">&</span>Profit: Part 8</h6>
+        <h4>Eight steps Texas can take to fix its managed-care mess</h4>
+        <p>Mistakes, lessons and research from other states provide a roadmap for meaningful reform. But will Texas leaders follow?</p>
+        <a href="part8.html">Read</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pp__storyblock">
+    <div class="pp__image" id="medicaid-block"></div>
+    <div class="pp__blockcontainer">
+      <div class="pp__blockcontent">
+        <h6>Pain<span class="white">&</span>Profit</h6>
+        <h4>What is Medicaid?</h4>
+        <p>Here’s a quick guide to the biggest health-care program in Texas. It pays for the medical care of poor and disabled people, everything from routine checkups to heart surgery.</p>
+        <a href="medicaid.html">Read</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-well">
+  <div id="related-links" class="no-show" style="position: relative; z-index: 50;">
+    <h4>Related coverage</h4>
+    <ul>
+    </ul>
+  </div>
+  </div>
+
+
+  <span class="arrow-indicator"></span>
+</section>
+
+</article>
+
+<footer class="interactive-footer home-footer no-show">
+  <div class="footer-content clearfix">
+    <img src="//interactives.dallasnews.com/common/templates/v1.0/images/_dn_logo_black.svg" alt="dallasnews logo"/>
+    <ul class="footer-social">
+      <li><a id="footer-facebook" href="https://www.facebook.com/dallasmorningnews" class="footer-social"></a></li>
+      <li><a id="footer-twitter" href="https://twitter.com/dallasnews" class="footer-social"></a></li>
+      <li><a id="footer-instagram" href="https://instagram.com/dallasnews" class="footer-social"></a></li>
+      <li><a id="footer-youtube" href="https://www.youtube.com/user/tdmnvid" class="footer-social"></a></li>
+    </ul>
+
+    <div class="footer-links clearfix">
+      <ul>
+        <li><a href="http://dmnmedia.com/about-us/company-info/">About Us</a></li>
+        <li><a href="https://ahbelo.mua.hrdepartment.com/hr/ats/JobSearch/index">Careers</a></li>
+        <li><a href="http://dmnmedia.com/">Advertise</a></li>
+        <li><a href="https://www.dallasnews.com/contact-us">Contact Us</a></li>
+        <li><a href="https://www.dallasnews.com/digital-sub/faq">FAQ</a></li>
+        <li><a href="https://www.dallasnews.com/privacy-policy">Privacy Policy</a></li>
+        <li><a href="https://www.dallasnews.com/terms">Terms of Service</a></li>
+        <li><a href="https://www.dallasnews.com/site-map">Site Map</a></li>
+      </ul>
+
+      <p>©<span class="copyright"></span>, The Dallas Morning News Inc. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  {%endblock%}
+
+  {%block custom_foot%}
+  {%endblock%}
+
+
+
+
+
+{%block custom_social_meta%}
+<script type="text/javascript">
+  var storyTitle = "{{tweetText}}", // headline in tweet card
+	storyURL = "{{url}}",
+	leadText = "{{shareText}}", //description in tweet card
+	storyIMG = "{{imgURL}}",
+	storyAuthor = "{% for author in authors %}{{author}}{{', ' if not loop.last}}{% endfor %}",
+	twitterTag = "{{sectionTwitter}}",
+	comments = true,
+	share = true;
+	OAS_sitepage = 'www.dallasnews.com/{{desk}}/{{section}}/';
+</script>
+{%endblock%}

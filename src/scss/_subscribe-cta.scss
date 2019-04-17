@@ -1,0 +1,36 @@
+@import '_mixins';
+@import '_variables';
+
+
+.subscribe-cta {
+ padding: 2.4rem;
+ @include textured-background;
+ h4 {
+   font-weight: bold;
+ }
+ p {
+   font-family: $sans;
+   @include type(1.4rem, 1.8rem, 2.4rem);
+ }
+ a {
+   background-color: $black245;
+   font-family: $sans;
+   color: $black33;
+   padding: 10px;
+   @include type(1.6rem, 2.4rem, 0);
+   @include transition(all, .25s, ease-out);
+   border-radius:3px;
+   border: 1px solid $black235;
+   &:visited {
+     color: $black33;
+   }
+   &:hover {
+     background-color: $black235;
+     text-decoration: none;
+   }
+ }
+}
+
+.subscribed .subscribe-cta {
+  display: none;
+}

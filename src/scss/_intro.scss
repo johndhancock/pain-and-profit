@@ -1,0 +1,204 @@
+@import 'variables';
+@import 'mixins';
+
+/*
+-------------------------------
+INTRO
+-------------------------------
+*/
+
+#intro {
+  width: 100%;
+  height: calc(100vh - 52px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include textured-background;
+  z-index: 20;
+  img {
+    width: 250px;
+    height: 232px;
+    margin-bottom: 15px;
+    -webkit-animation-name: iconMotion;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: iconMotion;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  h2, h4 {
+    color: $black33;
+    font-family: $sans;
+    opacity: 0;
+    -webkit-animation-name: brandFade;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: brandFade;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    line-height: 4.8rem;
+  }
+  h4 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+}
+
+#intro__content {
+  top: calc(40vh - 52px);
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  margin-left: -45%;
+  text-align: center;
+}
+
+@keyframes iconMotion {
+  from {
+    top: calc(50vh - 52px);
+    width: 250px;
+    height: 232px;
+  }
+  to {
+    top: calc(40vh - 52px);
+    width: 110px;
+    height: 102px;
+  }
+}
+
+@keyframes brandFade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@media (max-width: 800px) {
+  #intro__content {
+    top: calc(20vh - 52px);
+  }
+}
+
+
+/*
+-------------------------------
+INTRO SLIDES
+-------------------------------
+*/
+
+.intro__slide {
+  max-width: 500px;
+  margin: 0 auto;
+  width: 90%;
+  h6 {
+    @include type(1.8rem, 2.4rem, 0);
+    color: $black33;
+  }
+  button {
+    width: 100px;
+    padding: 10px 0;
+    border: 1px solid white;
+    font-family: $sans;
+    background-color: rgba(255,255,255,0);
+    color: white;
+    text-transform: uppercase;
+    margin-top: 20px;
+    @include transition(all, .25s, ease-out);
+    @include type(1.4rem, 1.8rem, 0);
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(255,255,255,1);
+      color: $black33;
+    }
+
+  }
+}
+
+
+
+/*
+-------------------------------
+INTRO NAV CIRCLES
+-------------------------------
+*/
+
+#intro__nav {
+  position: absolute;
+  bottom: 30px;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  text-align: center;
+  img {
+    width: 30px;
+    height: 30px;
+    animation-name: none;
+    -webkit-animation-name: none;
+    position: absolute;
+    cursor: pointer;
+    top: -10px;
+    opacity: .75;
+    @include transition(all, .25s, ease-out);
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+#intro__nav-circles {
+  margin-bottom: 30px;
+}
+
+.slide__circle {
+  width: 10px;
+  height: 10px;
+  text-indent: -9999px;
+  background-color: $black50;
+  border-radius: 50px;
+  display: inline-block;
+  margin-right: 3px;
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.slide--active {
+  background-color: $black215;
+}
+
+#intro__skip {
+  color: $black33;
+  text-transform: uppercase;
+  border-bottom: 3px solid white;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+#arrow__left {
+  left: 0px;
+  top: 0;
+}
+
+#arrow__right {
+  right: 0px;
+  top: 0;
+}
+
+@media (max-width: 600px) {
+  #intro__nav {
+    bottom: 50px;
+  }
+
+  #intro h2 {
+    font-size: 3rem;
+    line-height: 3.6rem;
+  }
+}

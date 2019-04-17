@@ -1,0 +1,99 @@
+.walkthrough__wrapper {
+  margin-bottom: 4.8rem;
+  .credit {
+    text-align: right;
+    font-family: $sans;
+    color: $black121;
+    font-size: 1.1rem;
+    margin-top: .3rem;
+  }
+}
+
+.walkthrough.walkthough__revolving-door {
+  padding: 0;
+  position: relative;
+  margin-bottom: 0;
+  svg {
+    .node-outlines circle,
+    .nodes image {
+      cursor: pointer;
+    }
+  }
+
+  #revolving-door-chatter {
+    padding: 15px;
+    opacity: 1;
+    h5 {
+      font-weight: bold;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media(min-width: 900px) {
+    #revolving-door-chatter {
+      position: absolute;
+      width: 25%;
+      padding: 35px 35px;
+      left: 0;
+      top: 0;
+    }
+    #revolving-door {
+      width: 90%;
+      margin-left: 10%;
+    }
+  }
+
+  #revolving-door-intro {
+    padding: 65px 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(white, 0.8);
+    > * {
+      width: 90%;
+    }
+    @media(min-width: 950px) {
+      > * {
+        width: 25%;
+      }
+    }
+  }
+
+  &.initial-state {
+    #revolving-door-chatter {
+      opacity: 0;
+    }
+  }
+
+  .call-to-action {
+    cursor: pointer;
+    position: relative;
+    font-weight: bold;
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+
+    button {
+      display: inline;
+      left: auto;
+      right: auto;
+      margin-left: 8.5px;
+      margin-top: -8.5px;
+    }
+  }
+}
+
+.touch-text {
+  display: none;
+}
+.touch-device {
+  .touch-text {
+    display: inline;
+  }
+  .click-text {
+    display: none;
+  }
+}

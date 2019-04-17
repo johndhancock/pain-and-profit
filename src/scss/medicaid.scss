@@ -1,0 +1,192 @@
+@import 'mixins';
+@import 'variables';
+
+body, .interactive-footer {
+  background-color: #202020;
+}
+
+body {
+  padding-bottom: 0 !important;
+}
+
+.pp__slide {
+  color: white;
+  height: 125vh;
+  display: table;
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: calc((100vw - 1100px) / 2);
+  &.last__slide {
+    width: 100%;
+    background-color: #202020;
+  }
+  .pp__slide-content {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+  }
+  p {
+    @include type(2.4rem, 3rem, 0);
+    font-family: $sans;
+    width: 90%;
+    max-width: 400px;
+  }
+  .credits {
+    max-width: 400px;
+    p {
+      @include type(1.2rem, 1.8rem, 0);
+      width: auto;
+      display: inline-block;
+      a, a:visited {
+        color: white;
+      }
+    }
+  }
+}
+
+.medicaid-art {
+  position: fixed;
+  height: calc(100vh - 51px);
+  top: 51px;
+  width: 90%;
+  left: 50%;
+  margin-left: -650px;
+  max-width: 1300px;
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 600px 600px;
+  background-image: url('../images/medicaid_ani_opener2.gif');
+}
+
+#medicaid #story-head {
+  z-index: 60;
+  top: 51px;
+}
+
+#medicaid .shareComments li a {
+  background-image: url('http://interactives.dallasnews.com/common/templates/v1.0/images/custom/socialSprites-working-poor.svg')
+}
+
+#medicaid .ad {
+  background-color: $black33;
+  color: white;
+  border-top: none;
+  border-bottom: none;
+}
+
+.medicaid-footer * {
+  color: white !important;
+}
+
+@media (max-width: 1200px) {
+  .medicaid-art {
+    background-position: center center;
+    left: 5%;
+    margin-left: 0;
+  }
+  .pp__slide {
+    p {
+      max-width: 650px;
+    }
+  }
+  #medicaid {
+    .shareCommentsTop {
+      ul {
+        text-align: center;
+      }
+    }
+    #story-head {
+      background-color: rgba($black33, .8);
+      .display-type {
+        text-align: center;
+        width: 90%;
+        left: 50%;
+        margin-left: -325px;
+      }
+    }
+  }
+  .pp__slide {
+    p {
+      text-align: center;
+      margin: 0 auto;
+      background-color: rgba($black33, .95);
+      padding: 20px;
+    }
+    .credits {
+      margin: 0 auto;
+      width: 95%;
+      p {
+        padding: 0 2rem 0 0;
+        text-align: left;
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 900px) {
+  #medicaid {
+    #story-head {
+      width: 100%;
+      background: rgba($black33, .8);
+      height: 110vh;
+      margin-top: 0;
+      .display-type {
+        max-width: 650px;
+        top: 5vh;
+        left: 50%;
+        margin-left: -325px;
+      }
+      h1, h5 {
+        color: white;
+        background: none;
+        padding: 0;
+      }
+      h1 {
+        margin-bottom: 1.2rem;
+      }
+      h2 {
+        @include type(2rem, 2.4rem, 1.2rem);
+      }
+      h3 {
+        border-bottom: none;
+        padding: 5px 10px;
+      }
+      .byline-block {
+        margin-bottom: 2.4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  #medicaid #story-head {
+    .display-type {
+      width: 90%;
+      max-width: none;
+      left: 5%;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .medicaid-art {
+    background-size: contain;
+  }
+  .pp__slide {
+    p {
+      @include type(1.4rem, 1.8rem, 0);
+      padding: 10px
+    }
+  }
+}
+
+@media (max-height: 650px) {
+  .medicaid-art {
+    background-size: contain;
+  }
+}
